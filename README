@@ -1,0 +1,8 @@
+These are only the modified files in the xv-6 scheduler for implementing the priority based scheduler . The default scheduler in Round Robin , these files also include the implementation of the system call set_priority() which takes process_id and a number as argument and sets the priority of that process .
+
+
+			IMPLEMENTATION OF THE PRIORITY BASEDE SCHEDULER
+
+==>  First we have to implement a syscall set_priority which chages the priority of the process.
+
+==> Then we  have to modify the existing Round Robin scheduler to priority based scheduler which is simple , we have to iterate through the ptable and find the process which is runnable and with least priority value and we have to put that process into eexecution .

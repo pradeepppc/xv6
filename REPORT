@@ -1,0 +1,51 @@
+Here I am presenting outputs of the terminal while running the xv-6 .
+
+
+==> First I have created two process in which each process creates a child process .
+
+==> Now cptest gives the list of processes in the os currently .
+
+==> Just after running the test program the output of cptest is as follows
+
+	name _______  process_id _______ status  
+	init		1		SLEEPING
+	sh		2		SLEEPING	
+	test		8		RUNNABLE
+	test		9		RUNNINGS	
+	test		5		SLEEPING	
+	test		7		SLEEPING	
+	cptest		11		RUNNINGS	
+
+==> In the above case there are 4 test programs 2 parent 2 child  I have added wait for parent so they were in slleping state .
+
+==> Among the both the child processes only one is running ie 9.
+
+==> Now change the priority of the process 8 to 24 .
+
+==> after changing the  cptest output is 
+	name _______  process_id _______ status _______ priority 
+	init		1		SLEEPING	3
+	sh		2		SLEEPING	3
+	test		8		RUNNINGS	25
+	test		9		RUNNABLE	60
+	test		5		SLEEPING	3
+	test		7		SLEEPING	3
+	cptest		13		RUNNINGS	3
+==> after changing the priority now 8 running because it has more priority .
+
+
+==> If we have general round robin scheduler the output is 
+
+		name _______  process_id _______ status                 
+        	init            1               SLEEPING
+        	sh              2               SLEEPING
+        	test            8               RUNNABLE
+        	test            9               RUNNINGS
+        	test            5               SLEEPING
+        	test            7               SLEEPING
+        	cptest          11              RUNNINGS
+
+==> The roundrobin scheduler only takes next one after completion of the process 9.
+
+	
+
